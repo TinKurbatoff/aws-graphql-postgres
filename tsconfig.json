@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "lib": [
+      "es2020",
+      "dom"
+    ],    
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "types/*", "src/aws-server/*"]
+    }
+  },
+  "include": [
+    "src/aws-server/index.ts",
+    "app.ts",
+    "server.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]  
+
+}

@@ -1,0 +1,3 @@
+scalar Date
+# import * from "./scalar-type.graphql"
+# import Query.*, Mutation.* from "addr-list.graphql"

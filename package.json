@@ -1,0 +1,54 @@
+{
+  "name": "addr-search",
+  "version": "0.1.0",
+  "description": "The API back end for addresses search",
+  "author": "Constantine",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./src/server.ts",
+    "prebuild": "rm -rf dist",
+    "build": "esbuild ./src_small/server.ts --bundle --minify --sourcemap --platform=node --target=es2019 --outfile=dist/index.js",
+    "postbuild": "cd dist && zip -r index.zip index.js*"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "keywords": [
+    "typescript",
+    "graphql",
+    "postgres"
+  ],
+  "dependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/express": "^4.17.13",
+    "apollo-server-express": "^3.9.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "console-stamp": "^3.0.6",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "errorhandler": "^1.5.0",
+    "express": "^4.18.1",
+    "graphql": "^14.3.1",
+    "graphql-import": "^1.0.2",
+    "graphql-tools": "^4.0.4",
+    "graphql-type-json": "^0.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "pg-native": "^3.0.0",
+    "pg-promise": "^10.11.1",
+    "pg-types": "^4.0.0",
+    "serverless-http": "^3.0.1",
+    "ts-node": "^10.8.2",
+    "typescript": "^3.4.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.101",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/pg": "^8.6.5",
+    "esbuild": "^0.14.48",
+    "tslint": "^5.15.0"
+  }
+}
