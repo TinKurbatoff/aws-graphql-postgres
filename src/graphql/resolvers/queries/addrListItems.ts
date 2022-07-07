@@ -10,8 +10,8 @@ export async function addrListItems(db: DB, args: any) {
     console.log(params)
     query = {
       // text: `SELECT * FROM addresses WHERE formatted_street_address LIKE '%' || $1 || '%'`,
-      // text: `SELECT * FROM addresses WHERE formatted_street_address LIKE $1 || '%'`,
-      text: `SELECT * FROM addresses WHERE formatted_street_address = $1`,
+      text: `SELECT * FROM addresses WHERE formatted_street_address LIKE $1 || '%'`,
+      // text: `SELECT * FROM addresses WHERE formatted_street_address = $1`,
       values: [args?.primary_lane.toUpperCase()],
     };
     // Add other search params
@@ -50,6 +50,7 @@ export async function addrListItems(db: DB, args: any) {
           street_post_direction: item.street_post_direction,
           unit_type: item.unit_type,
           unit_number: item.unit_number,
+          formatted_street_address: item.formatted_street_address,
           primary_lane: item.formatted_street_address,
           city: item.city,
           state: item.state,

@@ -15,10 +15,11 @@ type AddressItem {
   street_pre_direction: String!
   street_name: String!
   street_suffix: String!
-  street_post_direction: String!
+  street_post_direction: String
   unit_type: String!
   unit_number: String!
-  primary_lane: String!
+  formatted_street_address: String
+  primary_lane: String
   city: String!
   state: String!
   zip_code: String!
