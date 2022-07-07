@@ -15,6 +15,6 @@ export function connect() {
     database: process.env.RDS_DATABASE,
     password: process.env.RDS_PASSWORD,
     port: process.env.RDS_PORT,
-    ssl: process.env.DB_SSL === "True"
+    ssl: process.env.DB_SSL === "True"? { rejectUnauthorized: false } : false
   });
 }
